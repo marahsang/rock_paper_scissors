@@ -12,6 +12,8 @@ function getComputerChoice() {
 }
 
 function playRound() {
+    let playerSelection = prompt('Choose Rock, Paper, or Scissors').toLowerCase();
+    let computerSelection = getComputerChoice()
 if (playerSelection ===  computerSelection) {
     let result = "Tie! Try Again!"
     result += '\n'
@@ -92,9 +94,7 @@ function endGame() {
 }
 
 function game() {
-    let playerSelection = prompt('Choose Rock, Paper, or Scissors').toLowerCase();
-        let computerSelection = getComputerChoice()
-        console.log(playRound(playerSelection, computerSelection))
+        console.log(playRound())
     if(userScore < 5 && computerScore < 5){
     	game();
     }
