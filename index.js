@@ -3,11 +3,27 @@ console.log("Rock Paper Scissor Game");
 let computerScore = 0;
 let userScore = 0;
 
-function getComputerChoice() {
-    let gameArray = ['rock', 'paper', 'scissors']
-    let randomPlay = Math.floor(Math.random() * gameArray.length);
-    return gameArray[randomPlay]
- }
+ const rockBtn = document.querySelector('.rock');
+ const paperBtn = document.querySelector('.paper');
+ const scissorBtn = document.querySelector('.scissor');
+ const userOptions = [rockBtn, paperBtn, scissorBtn];
+ const gameArray = ['rock', 'paper', 'scissors']
+
+ // Function to start playing game
+ userOptions.forEach(option => {
+     option.addEventListener('click', function () {
+
+
+        const randomPlay = Math.floor(Math.random() * 3)
+        const computerChoice = gameArray[randomPlay]
+
+         playRound(this.innerText, computerChoice)
+
+     })
+ })
+
+
+
 function playRound() {
 	let playerSelection = prompt('Choose Rock, Paper, or Scissors').toLowerCase();
 	let computerSelection = getComputerChoice();
@@ -90,15 +106,5 @@ function endGame() {
         console.log("Game Over! You Lost! :(");
     }
 }
-
-function game() {
-    console.log(playRound());
-    if(userScore < 5 && computerScore < 5){
-    	game();
-    } else {
-    	endGame();
-    }
-}
-
 
 game();
