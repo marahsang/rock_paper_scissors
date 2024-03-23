@@ -1,5 +1,5 @@
 console.log("Rock Paper Scissor Game");
-
+const game = () => {
 let computerScore = 0;
 let userScore = 0;
 let moves = 0;
@@ -111,4 +111,6 @@ const playGame = () => {
             window.location.reload();
         })
     }
-playGame()
+    playGame()
+}
+game()
