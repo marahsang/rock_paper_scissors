@@ -2,6 +2,7 @@ console.log("Rock Paper Scissor Game");
 
 let computerScore = 0;
 let userScore = 0;
+let moves = 0;
 const playGame = () => {
  const rockBtn = document.querySelector('.rock');
  const paperBtn = document.querySelector('.paper');
@@ -13,14 +14,20 @@ const playGame = () => {
  userOptions.forEach(option => {
      option.addEventListener('click', function () {
 
+        const movesLeft = document.querySelector('.movesleft');
+        moves++;
+        movesLeft.innerText = `Moves Left: ${10 - moves}`;
 
         const randomPlay = Math.floor(Math.random() * 3)
         const computerChoice = gameArray[randomPlay]
 
         playRound(this.innerText, computerChoice)
-        endGame(userOptions, movesLeft);
+
+        if (moves == 10) {
+            endGame(userOptions, movesLeft);
+        }
      })
- })
+  })
 
 }
  const playRound = (playerSelection, computerSelection) => {
