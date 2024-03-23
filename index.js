@@ -93,24 +93,31 @@ const playGame = () => {
             option.style.display = 'none';
         })
   
-  
         chooseMove.innerText = 'Game Over!!'
         movesLeft.style.display = 'none';
   
         if (userScore > computerScore) {
+            result.style.fontSize = '2rem';
             result.innerText = 'You Won The Game'
+            result.style.color = '#308D46';
         }
         else if (userScore < computerScore) {
+            result.style.fontSize = '2rem';
             result.innerText = 'You Lost The Game';
+            result.style.color = 'red';
         }
         else {
+            result.style.fontSize = '2rem';
             result.innerText = 'Tie';
+            result.style.color = 'grey'
         }
         reloadBtn.innerText = 'Restart';
+        reloadBtn.style.display = 'flex'
         reloadBtn.addEventListener('click', () => {
             window.location.reload();
         })
     }
+
     playGame()
 }
 game()
