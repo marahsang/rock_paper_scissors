@@ -10,7 +10,6 @@ const playGame = () => {
  const userOptions = [rockBtn, paperBtn, scissorBtn];
  const gameArray = ['rock', 'paper', 'scissors']
 
- // Function to start playing game
  userOptions.forEach(option => {
      option.addEventListener('click', function () {
 
