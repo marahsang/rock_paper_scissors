@@ -1,90 +1,107 @@
-                          *{
-                              padding: 0;
-                              margin: 0;
-                              box-sizing: border-box;
-                              background: #082c6c;
-                              color: #fff;
-                           }
-                    
-                     .game {
-                             display: flex;
-                             flex-direction: column;
-                             height: 100vh;
-                             width: 100vw;
-                             justify-content: center;
-                             align-items: center;
-                           }
-                    
-                    .title {
-                             position: absolute;
-                             top: 0;
-                             font-size: 4rem;
-                             z-index: 2;
-                           }
-                    
-                    .score {
-                             display: flex;
-                             width: 30vw;
-                             justify-content: space-evenly;
-                             position: absolute;
-                             top: 70px;
-                             z-index: 1;
-                           }
-                    
-         .u-count,.c-count {
-                             text-align: center;
-                             font-size: 1.5rem;
-                             margin-top: 1rem;
-                           }
-                  .options {
-                             display: flex;
-                             width: 50vw;
-                             justify-content: space-evenly;
-                             margin-top: 2rem;
-                           }
-   .rock, .paper, .scissor {
-                             padding: 0.8rem;
-                             width: 100px;
-                             border-radius: 10px;
-                             background: green;
-                             outline: none;
-                             border-color: green;
-                             border: none;
-                             cursor: pointer;
-                           }
-                           
-                     .move {
-                             font-size: 2rem;
-                             font-weight: bold;
-                           }
-                   .reload {
-                           display: none;
-                           margin-top: 2rem;
-                           padding: 1rem;
-                           background: green;
-                           outline: none;
-                           border: none;
-                           border-radius: 10px;
-                           cursor: pointer;
-                           }
-                           
-                   .result {
-                           margin-top: 20px;
-                           font-size: 1.2rem;
-                           }
-                           
-                           @media screen and (max-width: 612px)
-                           {  
-                    .title {
-                               text-align: center;
-                           }
-                    .score {
-                               position: absolute;
-                               top: 200px;
-                               width: 100vw;
-                           }
-                  .options {
-                               width: 100vw;
-                           }
-                           
-                           }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background-color: #e6f2ff; /* Slightly darker background */
+}
+
+.title {
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+.score {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.count {
+  font-size: 2rem;
+  margin: 10px 0;
+}
+
+.options button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.options button:hover {
+  background-color: #add8e6;
+}
+
+.result {
+  margin: 20px 0;
+  font-size: 1.5rem;
+}
+
+.result-log {
+  max-height: 150px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 20px auto;
+  width: 90%;
+  max-width: 600px;
+  background-color: #fff;
+}
+
+.reload {
+  margin: 20px auto; /* Center align the button */
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  display: none;
+  background-color: #5f9341;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reload:hover {
+  background-color: #4c7a34;
+}
+
+@media (max-width: 768px) {
+  h1 {
+      font-size: 1.5rem;
+  }
+
+  button {
+      font-size: 0.9rem;
+      padding: 8px 16px;
+  }
+
+  .result {
+      font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+      font-size: 1.2rem;
+  }
+
+  button {
+      font-size: 0.8rem;
+      padding: 6px 12px;
+  }
+
+  .result {
+      font-size: 0.9rem;
+  }
+}
